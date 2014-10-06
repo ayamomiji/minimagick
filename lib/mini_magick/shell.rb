@@ -18,6 +18,8 @@ module MiniMagick
 
     def run(command)
       stdout, stderr, code = execute(command)
+      
+      return stdout if stderr['warning/png.c/MagickPNGWarningHandler/1831']
 
       case code
       when 1
